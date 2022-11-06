@@ -1,0 +1,28 @@
+{% extends 'server/master.html' %}
+{% block page_content %}
+    <div class="products">
+        {% for object in object_list %}
+        <div class="products_item">
+            <span class="products_item-name">
+                {{object.name|title}}
+            </span>
+            <span class="products_item-description">
+                {{object.description}}
+            </span>
+            {%if object.cost%}
+            <span class="products_item-cost">
+                {{object.cost}}
+            </span>
+            {%else%}
+            <span class="products_item-cost_empty">
+                Значение не определено
+            </span>
+            {%endif%}
+<!--            <a href="/products/{{forloop.counter}}" class="product_item-link">c ориентировкой на цикл-->
+            <a href="{% url 'detail' pk=object.id %}" class="product_item-link"> '''функция url принимает на себя имя функции как аргумент'''
+                ссылка на {{object.name|lower}}
+            </a>
+        </div>
+        {% endfor%}
+    </div>
+{% endblock %}

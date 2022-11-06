@@ -1,0 +1,25 @@
+{% extends 'server/master.html' %}
+{% load static %}
+
+{% block page_title %}
+От Олега
+{% endblock %}
+
+{% block page_static %}
+<link rel='stylesheet' href="{% static 'main/css/index.css' %}" >
+{% endblock%}
+
+{% block page_content %}
+<h1 class="page__title">
+    Главная страница
+</h1>
+<div class="page__preview">
+    <span class="username">
+        Привет {{name}}!
+    </span>
+    <img src="" alt="" class="branding__background">
+    <span class="branding__snippet">
+        Главная страница Интернет-витрины
+    </span>
+</div>
+{% endblock %}

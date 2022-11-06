@@ -1,0 +1,14 @@
+{% extends 'server/master.html' %} '''это значит, что мы хотим уноследовать данный шаблон
+                               из шаблона master дирректории server
+                               здесь же оставим только код там не имеющийся'''
+{% block page_content %}
+<h1 class="page__title">
+    Привет Олег, рад тебя видеть дорогой!!
+</h1>
+<div class="branding">
+    <img src(неизвестно) alt class="branding__background">
+    <span class="branding__snippet">
+        {{description}}
+    </span>
+</div>
+{% endblock %}
