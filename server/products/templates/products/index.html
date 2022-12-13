@@ -19,10 +19,14 @@
             </span>
             {%endif%}
 <!--            <a href="/products/{{forloop.counter}}" class="product_item-link">c ориентировкой на цикл-->
-            <a href="{% url 'detail' pk=object.id %}" class="product_item-link"> '''функция url принимает на себя имя функции как аргумент'''
+            <!--функция url принимает на себя имя функции как аргумент-->
+            <a href="{% url 'detail' pk=object.id %}" class="product_item-link">
                 ссылка на {{object.name|lower}}
             </a>
         </div>
         {% endfor%}
     </div>
+<a href="{% url 'main'%}">
+        Переход на главную
+</a>
 {% endblock %}

@@ -5,5 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('contacts/', contacts),
     path('description/', description),
-    path('index/', index)
+    path('index/', index, name = "main")
 ]
