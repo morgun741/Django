@@ -5,6 +5,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **option):
         try:
+               #функция filter возьмёт из таблицы все элементы, соответствующие условию name__startswith='[test]'
                query=Product.objects.filter(name__startswith='[test]')
                query.delete()
                self.stdout.write(self.style.SUCCESS('всё норм'))

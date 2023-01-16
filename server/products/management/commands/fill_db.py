@@ -11,6 +11,8 @@ class Command(BaseCommand):
     # заместо parser в функцию пойдёт ArgumentParser(см. модуль argparse)
     def add_arguments(self, parser):
         # добавляем аргумент, который наз. 'range'(количество созд. записей)
+        # parametr required(обязательный)=False talk about that the default-value don't necessary
+        # '--range' to write strictly(строго)
         parser.add_argument('--range', type=int, required=False, default=10)
     # why is option? Because here will be store options which pass through the command line
     def handle(self, *args, **option):
