@@ -5,7 +5,8 @@ from django.core.files import File
 
 def create_default_image(apps, shema_editor):
     file_name = 'images/орех.jpg'
-    # берём модель поступаемого app
+    # берём модель поступаемого apps
+    # это ленивая подгрукзка модели
     Image = apps.get_model('images', 'image')
     # проявляем в модели значения fields
     img = Image.objects.create(
