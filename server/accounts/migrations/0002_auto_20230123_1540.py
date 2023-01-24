@@ -6,7 +6,11 @@ def create_default_user(apps, schema_editor):
     #return model with help first app - 'accounts', second model - 'AccountUser'
     #ленивый призыв модели
     #AccountUser = apps.get_model('accounts', 'AccountUser')
-    usr = User(username='Oleg', is_staff=True, is_superuser=True)
+    usr = User(username='Oleg',
+    #to give access user for admin-panel
+               is_staff=True,
+    #to give user all possible rules
+               is_superuser=True)
     usr.set_password('rava18')
     usr.save()
 
