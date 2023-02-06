@@ -4,8 +4,24 @@ User Login
 {% endblock %}
 {%block page_content%}
 <form action="" method="POST" enctype="multipart/form-data">
-    <input type="text">
-    <input type="password">
+    {% csrf_token %}
+    <!--использую цикл для возможности с помощью html поправить поле из формы
+    потомучто обычный вызов формы правок не допускает-->
+    <!--{%for field in form%}
+    <div class="field-group">
+        <lable for="{{form.name}}">{{field.lable}}</lable>
+        <input name="username" type="text">
+    </div>
+    {%endfor%}-->
+    <div class="field-group">
+        <lable for="password">password</lable>
+        <input name="password" type="password">
+    </div>
+
+    <!--призываю форму риализованную из accounts/forms
+    as_table - для вывода содержимого в виде столбца
+    as_p - для вывода в виде строке-->
+    {{form.as_table}}
     <input type="submit">
 </form>
 {% endblock %}
