@@ -5,6 +5,12 @@ User Login
 {%block page_content%}
 <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    {% for field in form%}
+    <div class="field-group">
+        <label for="{{form.name}}">{{field.label}}</label>
+        {{field}}
+    </div>
+    {%endfor%}
     <!--использую цикл для возможности с помощью html поправить поле из формы
     потомучто обычный вызов формы правок не допускает-->
     <!--{%for field in form%}
@@ -13,15 +19,15 @@ User Login
         <input name="username" type="text">
     </div>
     {%endfor%}-->
-    <div class="field-group">
+    <!--<div class="field-group">
         <lable for="password">password</lable>
         <input name="password" type="password">
-    </div>
+    </div>-->
 
     <!--призываю форму риализованную из accounts/forms
     as_table - для вывода содержимого в виде столбца
     as_p - для вывода в виде строке-->
-    {{form.as_table}}
+    <!--{{form.as_table}}-->
     <input type="submit">
 </form>
 {% endblock %}

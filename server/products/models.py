@@ -12,7 +12,7 @@ class Product(models.Model):
     #image = models.ImageField(upload_to="images", blank=True)
     #look at register of model
     # on_delete=models.PROTECT doesn't let to remove picture if she is used in product_
-    image = models.ForeignKey('images.Image', on_delete=models.PROTECT)
+    image = models.ForeignKey('images.Image', on_delete=models.PROTECT, blank=True, null=True)
     description = models.TextField(verbose_name="описание продукта", blank=True)
     price = models.DecimalField(verbose_name="цена продукта", max_digits=8, decimal_places=2, default=0)
     quantity = models.PositiveIntegerField(verbose_name="количество на складе", default=0)

@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import path
-from .views import (contacts, description, index)
+from .views import (contacts, description, main)
+
+app_name = 'main'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contacts/', contacts),
     path('description/', description),
-    path('index/', index, name = "main")
+    path('main', main, name = "main")
 ]

@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template.loader import get_template, render_to_string
 #клепаю шаблоны с контекстом и заставляю сервер их обрабатывать
-def index(request):
+def main(request):
     #template = Template('Hello {{name}}')
     #context = Context({'name': 'Oleg'})
     template = get_template('main\index.html')       #выше низкого
