@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from .models import User
 class AccountUserForm(forms.Form):
     #в логин html мы рапссматриваем поле с username
     #однако атрибут label может иметь совсем другое значение
@@ -22,13 +23,16 @@ class AccountUserForm(forms.Form):
                                widget=forms.widgets.PasswordInput(
                                    attrs={'class': 'field_password'}
                                ))
-    img = forms.FileField()
+    file = forms.FileField()
+    birth_day = forms.DateField(widget=forms.widgets.DateInput())
 
 # class AccountUserForm(UserCreationForm):
 #     class Meta:
-#         fields = ('username', 'password', 'img')
+#         model = User
+#         fields = ('username', 'password', 'birth_day', 'file')
 #         widgets = {
-#             'username': forms.widgets.TextInput(attrs={'class': 'form-control'}),
-#             'password': forms.widgets.PasswordInput(attrs={'class': 'form-control'}),
-#             'img': forms.widgets.FileInput(attrs={'class': 'form-control'})
+#             'username': forms.widgets.TextInput(attrs={'class': 'field_username'}),
+#             'password': forms.widgets.PasswordInput(attrs={'class': 'field_password'}),
+#             'birth_day': forms.widgets.DateInput(attrs={'class': 'form-control'}),
+#             'file': forms.widgets.FileInput()
 #         }

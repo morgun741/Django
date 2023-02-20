@@ -8,5 +8,6 @@ class User(AbstractUser):
     #мы производим только расширение этой модели за счёт предидущих полей
     #ниже указанная функция вернёт username(имеющийся в AbstractUser) при преходе на который мы найдём выше указанные поля
     birth_day = models.DateField(verbose_name='Дата рождение', blank=True, null=True)
+    file = models.FileField(upload_to='accounts', blank=True, null=True)
     def __str__(self):
         return self.username
